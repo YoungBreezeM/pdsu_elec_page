@@ -1,0 +1,145 @@
+a:link,
+a:visited,
+a:active {
+  text-decoration: none;
+}
+* {
+  box-sizing: border-box;
+}
+*::-webkit-scrollbar {
+  width: 4px;
+}
+*::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  border-radius: 0;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+*::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  border-radius: 0;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.cascader-style {
+  width: 100px;
+}
+.index-menu,
+.index-menu:hover {
+  width: 55%;
+  display: inline-block !important;
+  margin: 0 10px;
+  .el-input__inner {
+    background-color: #111739;
+    border: 1px solid #60c1de;
+    color: #fff;
+  }
+  .el-input__inner:hover {
+    border: 1px solid #60c1de;
+  }
+  .menu-name {
+    font-size: 13px;
+    color: #60c1de;
+  }
+}
+#show {
+  background: #111739;
+  .clearfix:before,
+  .clearfix:after {
+    display: table;
+    content: " ";
+  }
+  .clearfix:after {
+    clear: both;
+  }
+  .main {
+    padding: 0 20px 20px;
+    .border-container {
+      position: relative;
+      margin-top: 15px;
+      padding: 5px 5px 0 5px;
+      border: 1px solid #54dcf2;
+      span.border-span {
+        display: block;
+        position: absolute;
+        width: 35px;
+        height: 35px;
+      }
+      span.top-left {
+        top: -4px;
+        left: -4px;
+        border-top: 3px solid #54dcf2;
+        border-left: 3px solid #54dcf2;
+      }
+      span.top-right {
+        top: -4px;
+        right: -4px;
+        border-top: 3px solid #54dcf2;
+        border-right: 3px solid #54dcf2;
+      }
+      span.bottom-left {
+        bottom: -4px;
+        left: -4px;
+        border-bottom: 3px solid #54dcf2;
+        border-left: 3px solid #54dcf2;
+      }
+      span.bottom-right {
+        bottom: -4px;
+        right: -4px;
+        border-bottom: 3px solid #54dcf2;
+        border-right: 3px solid #54dcf2;
+      }
+    }
+  }
+  .show-view {
+    float: left;
+    color: #00ffff;
+    margin: 1%;
+    overflow: inherit;
+  }
+  .left {
+    width: 29%;
+    .show-weather {
+      width: 100%;
+      height: 6rem;
+    }
+    .show-line {
+      width: 100%;
+      height: 24.5rem;
+    }
+    .show-person-num {
+      width: 100%;
+      height: 20rem;
+    }
+  }
+  .center {
+    width: 39%;
+    .show-map {
+      width: 100%;
+      height: 52.2rem;
+    }
+  }
+  .right {
+    width: 26%;
+    .show-table {
+      width: 100%;
+      height: 15.5rem;
+    }
+    .show-radio {
+      width: 100%;
+      height: 17.5rem;
+    }
+    .show-input {
+      width: 100%;
+      height: 17.3rem;
+    }
+  }
+  .open-view {
+    width: 98%;
+  }
+  .switch-view {
+    position:absolute;
+    right:7px;
+    top:7px;
+    z-index: 666;
+  }
+}

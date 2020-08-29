@@ -1,0 +1,95 @@
+.index {
+  background: #0b0f2a;
+  .index-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    .container-right {
+      width: 88%;
+      height: 100%;
+      .right-nav {
+        width: 100%;
+        background-color: #111739;
+        line-height: 60px;
+      }
+      .el-main {
+        padding: 10px 10px 0 10px;
+      }
+      .right-main {
+        width: 100%;
+        height: 92%;
+        display: flex;
+      }
+    }
+  }
+
+  .el-table {
+    color: white !important;
+  }
+  .el-table td,
+  .el-table th {
+    text-align: center;
+  }
+  .el-table thead {
+    color: white !important;
+  }
+  .el-table--border::after,
+  .el-table--group::after,
+  .el-table::before {
+    background-color: #111739 !important;
+  }
+  .el-table th,
+  .el-table tr {
+    background-color: #111739 !important;
+  }
+  .el-table td,
+  .el-table th.is-leaf {
+    border-bottom: 1px solid #585e80 !important;
+  }
+  .el-table--border td,
+  .el-table--border th,
+  .el-table__body-wrapper
+  .el-table--border.is-scrolling-left
+  ~ .el-table__fixed {
+    border-right: 1px solid #585e80 !important;
+  }
+  .el-table--border,
+  .el-table--group {
+    border: 1px solid #585e80 !important;
+  }
+  .el-table--enable-row-hover .el-table__body tr:hover > td {
+    background-color: #0b0f2a !important;
+    // color: #2C9EF3;
+  }
+  .icon-control {
+    margin: 0 5px;
+  }
+  .el-table__empty-block {
+    background-color: #111739 !important;
+  }
+  .el-table__empty-text {
+    color: white !important;
+  }
+  .el-table,
+  .el-table__expanded-cell {
+    background-color: #111739 !important;
+  }
+  .el-table__body-wrapper::-webkit-scrollbar {
+    width: 4px;
+  }
+  .el-table__body-wrapper::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    border-radius: 0;
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+  .el-table__body-wrapper::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    border-radius: 0;
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+  .asideStyle{
+    height: 100%;
+    background-color: #111739
+  }
+}

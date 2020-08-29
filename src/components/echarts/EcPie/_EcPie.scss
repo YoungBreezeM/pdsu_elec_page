@@ -1,0 +1,20 @@
+.EcPie {
+    width: 100%;
+    height: 100%;
+
+    #myPie{
+        width: 100%;
+        height: 90%;
+    }
+    .toBack{
+        position: absolute;
+        z-index: 99;
+        top: 15%;
+        left: 2%;
+        color:white;
+        background:#00c298;
+        padding:5px;
+        border-radius: 3px;
+        cursor:pointer
+    }
+}

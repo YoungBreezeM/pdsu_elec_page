@@ -1,0 +1,25 @@
+.dormitory-info::-webkit-scrollbar {
+  width: 4px;
+}
+.dormitory-info::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  border-radius: 0;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.dormitory-info::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  border-radius: 0;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.dormitory-info {
+  width: 95%;
+  margin: auto;
+  height: 100%;
+  .chart-title {
+    font-size: 20px;
+  }
+  .student-info {
+    margin-top: 18px;
+  }
+}

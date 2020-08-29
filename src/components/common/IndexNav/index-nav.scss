@@ -1,0 +1,37 @@
+.index-nav {
+  width: 100%;
+
+  .el-icon-message {
+    position: relative;
+    top: -2px;
+    color: #fff;
+  }
+
+  .el-icon-message:hover {
+    color: #409eff;
+  }
+
+  .nav-row {
+    text-align: center;
+
+    .item {
+      margin: 0 15px;
+    }
+
+    .nav-user {
+      margin-left: 3px;
+    }
+
+    .el-badge__content.is-fixed {
+      top: 15px;
+    }
+
+    .el-dropdown {
+      color: #fff;
+    }
+
+    .el-dropdown:hover {
+      color: #409eff;
+    }
+  }
+}

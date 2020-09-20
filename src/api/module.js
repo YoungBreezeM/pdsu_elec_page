@@ -25,10 +25,27 @@ export let updateModule = async (module)=>{
     return rs;
 }
 
+export let addModule = async (module)=>{
+    let rs = await Http({
+        method:"put",
+        url:"/module",
+        data:module
+    })
+    return rs;
+}
+
 export let getModule = async ()=>{
     let rs = await Http({
         method:"get",
         url:"/module",
+    })
+    return rs;
+}
+
+export let deleteModule = async (id)=>{
+    let rs = await Http({
+        method:"delete",
+        url:"/module/"+id,
     })
     return rs;
 }

@@ -16,3 +16,11 @@ export let updateQuota = async (quota)=>{
     })
     return rs;
 }
+
+export let deleteQuota = async (id)=>{
+    let rs = await Http({
+        method:"delete",
+        url:"/quota/"+id,
+    })
+    return rs;
+}

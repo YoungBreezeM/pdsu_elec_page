@@ -5,7 +5,11 @@
                 <YBorder
                         :height="370"
                 >
-                        <MapChart></MapChart>
+                    <YFullScreen
+                            @windowStatus='screenStatus'
+                    >
+                        <MapChart :is-reload="isReload"></MapChart>
+                    </YFullScreen>
 
                 </YBorder>
             </el-col>

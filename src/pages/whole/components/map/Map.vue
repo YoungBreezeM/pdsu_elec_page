@@ -43,7 +43,6 @@
     import optionPublicFun from "../../../../utils/optionPublic.js";
     import optionMapFun from "./optionMap.js";
     import {ResType} from "../../../../api/ResType";
-    import {Ascending, Descending} from "../../../../utils/calculate";
     import {getAllQuotas} from "../../../../api/quotas";
     import {getAllTime} from "../../../../api/time";
     import {defaultCity} from "../../../../config/defaultOption";
@@ -53,6 +52,7 @@
     require("echarts/lib/component/tooltip");
     export default {
         name: "map-chart",
+        props:['isReload'],
         data() {
             return {
                 myChart: null,
@@ -332,7 +332,7 @@
             changeTime(val) {
                 if (this.activeQuota != null) {
                     this.datas = [];
-                    getCityValueByTidAndIid(val, this.activeTime)
+                    getCityValueByTidAndIid(val, this.activeQuota)
                         .then(res => {
                             console.log(res)
                             if (res.code === ResType.success) {
@@ -409,6 +409,13 @@
                 }
 
             }
+        },
+        watch:{
+            isReload(val) {
+                console.log(val)
+                this.myChart.resize();
+                console.log('reload')
+            },
         }
     };
 </script>

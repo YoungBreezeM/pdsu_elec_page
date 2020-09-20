@@ -17,7 +17,7 @@ devServeConfig: &devServeConfig
   hotOnly: true # 热更新
   proxy:
     /api:
-      target: 'http://192.168.1.107:8083'
+      target: 'http://127.0.01:8083'
       ws: false
       changeOrigin: true
       pathRewrite: {

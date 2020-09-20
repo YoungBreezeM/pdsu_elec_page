@@ -89,6 +89,9 @@
                        res.data.forEach(item=>{
                            this.allTimes.push(item['time']);
                        })
+                      this.allTimes.sort((a,b)=>{
+                          return a-b;
+                      })
                   }
               })
             },
@@ -129,8 +132,6 @@
             async initLine(){
               await this.initQuotas()
               await this.initTime();
-
-
 
               await this.initData(this.activeQuota);
 

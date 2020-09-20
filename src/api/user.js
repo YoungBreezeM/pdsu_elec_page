@@ -48,6 +48,13 @@ export let checkAdmin = async ()=>{
   });
 }
 
+export let checkToken = async ()=>{
+  return Http({
+    method: "get",
+    url: "/checkToken",
+  });
+}
+
 export let addAdmin = async (admin)=>{
   return Http({
     method: "put",

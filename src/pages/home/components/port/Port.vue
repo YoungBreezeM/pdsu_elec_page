@@ -2,9 +2,7 @@
     <div class="port">
         <el-row>
             <el-col :span="24" style="margin: 20px">
-                <el-upload class="uploadfile" action="" :http-request='uploadFileMethod' :show-file-list="true" multiple>
-                    <el-button class="custom-btn" type="success">上传</el-button>
-                </el-upload>
+                <el-button type="success" @click="selectedFile">上传</el-button>
             </el-col>
         </el-row>
         <el-row>
@@ -20,7 +18,7 @@
                 <el-table-column label="操作" width="120">
                     <template slot-scope="rowNode">
 
-                        <i class="el-icon-delete down"  @click="delOperation(rowNode)"></i>
+                        <i class="el-icon-delete down" @click="delOperation(rowNode)"></i>
                     </template>
 
                 </el-table-column>
@@ -39,6 +37,28 @@
                 <p class="thanks-info">Copyright &copy;2015-2017 H-ui.admin v3.1 All Rights Reserved.</p>
             </div>
         </footer>
+        <el-dialog
+                title="文件上传"
+                :visible.sync="centerDialogVisible"
+                width="50%"
+                center>
+            <div>
+                <el-upload
+                        class="upload-demo"
+                        drag
+                        action=""
+                        :http-request='uploadFileMethod'
+                        multiple>
+                    <i class="el-icon-upload"></i>
+                    <div class="el-upload__text">将文件拖到此处，或<em>点击上传</em></div>
+                    <div class="el-upload__tip" slot="tip">1.只能上传excel文件</div>
+                    <div class="el-upload__tip" slot="tip">2.excel文件需要经过单元格内容拆分</div>
+                    <div class="el-upload__tip" slot="tip">3.excel文件期初值需要转化成具体时间</div>
+                    <div class="el-upload__tip" slot="tip">4.excel文件单元格空值需要填充</div>
+                </el-upload>
+
+            </div>
+        </el-dialog>
     </div>
 </template>
 <script>
@@ -50,49 +70,52 @@
         name: "port",
         data() {
             return {
-                files: [
-
-                ],
+                files: [],
 
                 delDialog: false,
                 operationIndex: 0,
-                operationName: ""
+                operationName: "",
+                centerDialogVisible: false
             };
         },
-        mounted(){
+        mounted() {
             this.loadingFiles();
         },
         methods: {
             uploadFileMethod(param) {
+                console.log(param)
                 let fileObject = param.file;
-
                 fileUpload(fileObject)
-                    .then(res=>{
-                        if(res.code===ResType.success){
+                    .then(res => {
+                        if (res.code === ResType.success) {
                             this.loadingFiles();
+                            this.centerDialogVisible= !this.centerDialogVisible;
                         }
-                    }).catch(err=>{
-                        console.log(err)
+                    }).catch(err => {
+                    console.log(err)
                 })
 
             },
-            loadingFiles(){
+            selectedFile() {
+                this.centerDialogVisible = !this.centerDialogVisible;
+            },
+            loadingFiles() {
                 getAllFile()
-                .then(res=>{
-                    if(res.code===ResType.success){
-                        console.log(res)
-                        this.files = res.data;
-                    }
-                })
+                    .then(res => {
+                        if (res.code === ResType.success) {
+                            console.log(res)
+                            this.files = res.data;
+                        }
+                    })
             },
             delOperation(index) {
                 console.log()
                 deleteFile(index.row.id)
-                .then(res=>{
-                    if(res.code===ResType.success){
-                        this.loadingFiles()
-                    }
-                })
+                    .then(res => {
+                        if (res.code === ResType.success) {
+                            this.loadingFiles()
+                        }
+                    })
             },
             delTable() {
 

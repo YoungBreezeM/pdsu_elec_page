@@ -1,12 +1,19 @@
-
 /**
  * @param router  拦截该路由验证登录
  * */
+import {checkToken} from "../api/user";
+import {ResType} from "../api/ResType";
+
 export function verifyLogin(router) {
     router.beforeEach((to, from, next) => {
         if (to.matched.some((r) => r.meta.requireAuth)) {
           if(window.localStorage.token){
-              next()
+              checkToken()
+                  .then(res=>{
+                      if(res.code===ResType.success){
+                          next();
+                      }
+                  })
           }else {
               window.location.href ="/login.html"
           }
